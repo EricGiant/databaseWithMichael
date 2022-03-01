@@ -1,0 +1,7 @@
+- make website front end where user puts in info
+- make database to hold user info
+- make user input go into database
+- calculate the age in total years
+- calculate the age in total months
+- calculate the age in total days
+* don't make calculated age go into database
