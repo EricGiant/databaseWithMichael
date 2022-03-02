@@ -1,7 +1,43 @@
-- make website front end where user puts in info
+To do list syntax
+- has to be in project
+* commment
+
+- make website front end where user puts in info/can see info
 - make database to hold user info
 - make user input go into database
 - calculate the age in total years
 - calculate the age in total months
 - calculate the age in total days
-* don't make calculated age go into database
+* when typing in user birthdate make it so it auto fills the space after day/month numbers with a -
+*database stores in this order:
+- ID
+- voorNaam
+- AchterNaam
+- geboorteDatum
+
+michael:
+
+make form that with 3 items:
+- voorNaam
+- achterNaam
+- geboorteDatum
+
+send voor/achterNaam/geboorteDatum to database
+send geboorteDatum to erics PHP script for this
+
+make interface where user can select what info from the database they can see
+(formate of each users select will be: using example Eric Spier 11-07-2005, S Eric)
+
+send a request to the server for this info when clicked and then send the server sendback to erics PHP script for this
+
+
+eric:
+make database (done)
+make part of site that shows selected user data
+- voorNaam
+- achterNaam
+- geboorteDatum
+- age in days
+- age in months
+- age in years
+calculate age in days/months/years (done)
