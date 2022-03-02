@@ -32,7 +32,7 @@ send a request to the server for this info when clicked and then send the server
 
 
 eric:
-make database (done)
+make database
 make part of site that shows selected user data
 - voorNaam
 - achterNaam
@@ -40,4 +40,4 @@ make part of site that shows selected user data
 - age in days
 - age in months
 - age in years
-calculate age in days/months/years (done)
+calculate age in days/months/years
