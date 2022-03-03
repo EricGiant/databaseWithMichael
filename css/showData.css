@@ -1,4 +1,41 @@
 #selectedDataGrid
 {
-    background-color: rebeccapurple;
+    width: 90%;
+    margin: auto;
+    background-color: gray;
+    border-radius: 50px;
+    text-align: center;
+}
+#name_date
+{
+    display: inline-block;
+    width: 45%;
+}
+.titleData
+{
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.userData
+{
+    font-size: 30px;
+    background-color: white;
+    border-radius: 20px;
+    width:fit-content;
+    padding: 10px;
+    margin: auto;
+    border: 2px solid black;
+}
+#agesBox
+{
+    width: 40%;
+    margin: auto;
+}
+#ages
+{
+    width: 40%;
+    display: inline-block;
+    margin-bottom: 10px;
 }

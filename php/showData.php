@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="/repository/css/showData.css">
+    <link rel="stylesheet" href="/B2/css/showData.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,14 +14,25 @@ $firstName = "Eric";
 $lastName = "Spier";
 $birthDate = "2005-07-11";
 echo("<div id = 'selectedDataGrid'>");
-echo("<div>" . $firstName . "</div>");
-echo("<div>" . $lastName . "</div>");
-echo("<div>" . $birthDate . "</div>");
+echo("<div>");
+echo("<div class = 'titleData'  id = 'name_date'>" . "Full name");
+echo("<div class = 'userData'>" . $firstName . " " . $lastName . "</div>");
+echo("</div>");
+echo("<div class = 'titleData'  id = 'name_date'>" . "Birthdate");
+echo("<div class = 'userData'>" . $birthDate . "</div>");
+echo("</div>");
+echo("</div>");
 //calculate the age in days/months years and store this in an array
 $ages = ageCalculator($birthDate);
-echo("<div>" . $ages[0] . "</div>");
-echo("<div>" . $ages[1] . "</div>");
-echo("<div>" . $ages[2] . "</div>");
+echo("<div id = 'agesBox'>");
+echo("<div class = 'titleData'>" . "Has been alive for" . "</div>");
+echo("<div class = 'userData' id = 'ages'>" . $ages[0] . "</div>");
+echo("<div id = 'ages' style = 'font-size: 45px; font-weight:bold'>" . "Days" . "</div>");
+echo("<div class = 'userData' id = 'ages'>" . $ages[1] . "</div>");
+echo("<div id = 'ages'  style = 'font-size: 45px; font-weight:bold'>" . "Months" . "</div>");
+echo("<div class = 'userData' id = 'ages'>" . $ages[2] . "</div>");
+echo("<div id = 'ages'  style = 'font-size: 45px; font-weight:bold'>" . "Years" . "</div>");
+echo("</div>");
 echo("</div>");
 
 function ageCalculator($input)
@@ -53,7 +64,7 @@ function ageCalculator($input)
     //round all the numbers down and add them to array that will be returned
     $alive_days = floor($alive_days);
     $alive_months = floor($alive_months);
-    $alive_years = floor($alive_years);
+    $alive_years = round($alive_years, 1);
     $array = [];
     array_push($array, $alive_days, $alive_months, $alive_years);
     return $array;
