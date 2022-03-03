@@ -32,12 +32,13 @@ send a request to the server for this info when clicked and then send the server
 
 
 eric:
-make database
-make part of site that shows selected user data
+make database (done)
+make part of site that shows selected user data (done)
 - voorNaam
 - achterNaam
 - geboorteDatum
 - age in days
 - age in months
 - age in years
-calculate age in days/months/years
+calculate age in days/months/years (done)
+make drawing of final webpage layout (done)

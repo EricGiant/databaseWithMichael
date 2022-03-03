@@ -6,6 +6,8 @@
 </head>
 <body>
 
+
+
 <?php
 //collect info from server
 
