@@ -6,3 +6,16 @@ body {
 form {
     margin: auto;
 }
+
+#part1
+{
+    display: inline-block;
+}
+#part2
+{
+    display: inline-block;
+}
+#part3
+{
+
+}

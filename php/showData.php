@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="/B2/css/showData.css">
-    <title>Document</title>
-</head>
-<body>
-
-
-
 <?php
 //collect info from server
 
@@ -17,17 +7,17 @@ $lastName = "Spier";
 $birthDate = "2005-07-11";
 echo("<div id = 'selectedDataGrid'>");
 echo("<div>");
-echo("<div class = 'titleData'  id = 'name_date'>" . "Full name");
+echo("<div class = 'titleData'>" . "Full name");
 echo("<div class = 'userData'>" . $firstName . " " . $lastName . "</div>");
 echo("</div>");
-echo("<div class = 'titleData'  id = 'name_date'>" . "Birthdate");
+echo("<div class = 'titleData'>" . "Has been alive for" . "</div>");
+echo("<div class = 'titleData'>" . "Birthdate");
 echo("<div class = 'userData'>" . $birthDate . "</div>");
 echo("</div>");
 echo("</div>");
 //calculate the age in days/months years and store this in an array
 $ages = ageCalculator($birthDate);
 echo("<div id = 'agesBox'>");
-echo("<div class = 'titleData'>" . "Has been alive for" . "</div>");
 echo("<div class = 'userData' id = 'ages'>" . $ages[0] . "</div>");
 echo("<div id = 'ages' style = 'font-size: 45px; font-weight:bold'>" . "Days" . "</div>");
 echo("<div class = 'userData' id = 'ages'>" . $ages[1] . "</div>");
@@ -72,8 +62,3 @@ function ageCalculator($input)
     return $array;
 }
 ?>
-    
-</body>
-</html>
-
-

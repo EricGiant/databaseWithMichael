@@ -39,20 +39,31 @@
         <link rel="stylesheet" href="../css/showData.css">
     </head>
     <body>
-        <form method="post">
-            <label>
-                Voornaam:<br/>
-                <input type="text" name="firstName">
-            </label><br/>
-            <label>
-                Achternaam:<br/>
-                <input type="text" name="lastName">
-            </label><br/>
-            <label>
-                Geboortedatum:<br/>
-                <input type="date" name="birthdate">
-            </label><br/>
-            <input type="submit" value="🗿">
-        </form>
+        <div id = "part1">
+            <form method="post">
+                <label>
+                    Voornaam:<br/>
+                    <input type="text" name="firstName">
+                </label><br/>
+                <label>
+                    Achternaam:<br/>
+                    <input type="text" name="lastName">
+                </label><br/>
+                <label>
+                    Geboortedatum:<br/>
+                    <input type="date" name="birthdate">
+                </label><br/>
+                <input type="submit" value="🗿">
+            </form>
+        </div>
+        <div id = "part2">
+            <!-- put the select user code here -->
+        </div>
+        <div id = "part3">
+            <!-- code for showData comes here -->
+            <?php
+            include("../php/showData.php");
+            ?>
+        </div>
     </body>
 </html>
