@@ -2,12 +2,11 @@
 <html lang="en">
     <head>
         <?php
-            // stuff
+            // Does some stuff
             $server = "localhost";
             $database = "b2_eric&michael";
             $username = "root";
             $password = "";
-
 
             // Checks if all inputs are filled
             if (!empty($_POST['firstName']) and !empty($_POST['lastName']) and !empty($_POST['birthdate'])) {
@@ -36,23 +35,23 @@
         ?>
         <meta charset="UTF-8">
         <title>Webpage</title>
-        <link rel="stylesheet" href="index.css">
-<!--        <link rel="stylesheet" href="showData.css">-->
-        <style>
-            body {
-                background-color: rgb(33, 33, 33);
-                color: white;
-            }
-        </style>
+        <link rel="stylesheet" href="../css/index.css">
+        <link rel="stylesheet" href="../css/showData.css">
     </head>
     <body>
         <form method="post">
-            <label for="firstName">Voornaam:</label><br/>
-            <input type="text" name="firstName"><br/>
-            <label for="lastName">Achternaam:</label><br/>
-            <input type="text" name="lastName"><br/>
-            <label for="birthday">Geboortedatum:</label><br/>
-            <input type="date" name="birthdate"><br/>
+            <label>
+                Voornaam:<br/>
+                <input type="text" name="firstName">
+            </label><br/>
+            <label>
+                Achternaam:<br/>
+                <input type="text" name="lastName">
+            </label><br/>
+            <label>
+                Geboortedatum:<br/>
+                <input type="date" name="birthdate">
+            </label><br/>
             <input type="submit" value="🗿">
         </form>
     </body>
