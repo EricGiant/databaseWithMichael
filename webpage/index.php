@@ -39,24 +39,24 @@
         <link rel="stylesheet" href="../css/showData.css">
     </head>
     <body>
-        <div id = "part1">
+        <div class = "top">
             <form method="post">
-                <label>
-                    Voornaam:<br/>
-                    <input type="text" name="firstName">
+                <label class = "text">
+                    First Name:<br/>
+                    <input type="text" name="firstName" class = "input" autocomplete = "off">
                 </label><br/>
-                <label>
-                    Achternaam:<br/>
-                    <input type="text" name="lastName">
+                <label class = "text">
+                    Last Name:<br/>
+                    <input type="text" name="lastName" class = "input" autocomplete = "off">
                 </label><br/>
-                <label>
-                    Geboortedatum:<br/>
-                    <input type="date" name="birthdate">
+                <label class = "text">
+                    Birthdate:<br/>
+                    <input type="date" name="birthdate" class = "input" autocomplete = "off">
                 </label><br/>
-                <input type="submit" value="🗿">
+                <input type="submit" value="Submit" id = "submit">
             </form>
         </div>
-        <div id = "part2">
+        <div class = "top">
             <!-- put the select user code here -->
         </div>
         <div id = "part3">
