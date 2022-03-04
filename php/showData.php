@@ -1,19 +1,33 @@
 <?php
+// server info
+$server = "localhost";
+$database = "b2_eric&michael";
+$username = "root";
+$password = "";
+$connection = new mysqli($server, $username, $password, $database);
+// Checks if connection is successful
+if ($connection -> connect_error)
+{
+    die("Connection failed: " . $conn -> connect_error);
+}
+//collect ID send through post
+$ID = 2;
 //collect info from server
-
-//test info
-$firstName = "Eric";
-$lastName = "Spier";
-$birthDate = "2005-07-11";
+$sql = "SELECT firstName, lastName, birthdate FROM userdata WHERE id = $ID";
+$result = $connection -> query($sql);
+$result = $result -> fetch_assoc();
+//close connection to DB
+$connection -> close();
+//echo page
 echo("<div id = 'selectedDataGrid'>");
     echo("<div class = 'element'>");
         echo("<div class = 'titleData'>" . "Full name");
-            echo("<div class = 'userData'>" . $firstName . " " . $lastName . "</div>");
+            echo("<div class = 'userData'>" . $result["firstName"] . " " . $result["lastName"] . "</div>");
         echo("</div>");
     echo("</div>");
     echo("<div class = 'element'>");
         echo("<div class = 'titleData'>" . "Has been alive for");
-            $ages = ageCalculator($birthDate);
+            $ages = ageCalculator($result["birthdate"]);
             echo("<div style = 'text-align: left'>");
                 echo("<div class = 'dateInput'>" . $ages[0] . "</div>");
                 echo("<div class = 'dateWord'>" . "Days" . "</div>");
@@ -30,26 +44,25 @@ echo("<div id = 'selectedDataGrid'>");
     echo("</div>");
     echo("<div class = 'element'>");
         echo("<div class = 'titleData'>" . "Birthdate");
-        echo("<div class = 'userData'>" . $birthDate . "</div>");
+        echo("<div class = 'userData'>" . $result["birthdate"] . "</div>");
     echo("</div>");
 echo("</div>");
 
 function ageCalculator($input)
 {
-    $input = "11-07-2005";
     //first filter out the -
     //this will give back an array
     $input = preg_split("/[-]/", $input);
     //check if the input is even a falid date
-    if(!(checkdate($input[1], $input[0], $input[2])))
+    if(!(checkdate($input[2], $input[1], $input[0])))
     {
         echo("date isn't valid");
         return;
     }
     //calculate date differences
-    $dayDif = date("d") - $input[0];
+    $dayDif = date("d") - $input[2];
     $monthDif = date("m") - $input[1];
-    $yearDif = date("Y") - $input[2];
+    $yearDif = date("Y") - $input[0];
     //set date difference over to days
     $days_day = $dayDif;
     $days_month = $monthDif * (365.25 / 12);
