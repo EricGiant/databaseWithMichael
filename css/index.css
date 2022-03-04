@@ -14,12 +14,10 @@ form {
     margin-bottom: 30px;
     margin-top: 20px;
 }
-
 .text
 {
     font-size: 30px;
 }
-
 .input
 {
     margin-bottom: 10px;
@@ -27,7 +25,6 @@ form {
     border: 3px solid black;
     outline: none;
 }
-
 #submit
 {
     font-size: 40px;

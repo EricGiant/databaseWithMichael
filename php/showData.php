@@ -53,12 +53,6 @@ function ageCalculator($input)
     //first filter out the -
     //this will give back an array
     $input = preg_split("/[-]/", $input);
-    //check if the input is even a falid date
-    if(!(checkdate($input[2], $input[1], $input[0])))
-    {
-        echo("date isn't valid");
-        return;
-    }
     //calculate date differences
     $dayDif = date("d") - $input[2];
     $monthDif = date("m") - $input[1];
