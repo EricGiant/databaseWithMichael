@@ -63,12 +63,12 @@ if (!empty($_POST['firstName']) and !empty($_POST['lastName']) and !empty($_POST
     //checks if user input is valid
     if(!(preg_match("/^[A-Za-z]+$/", $firstName)))
     {
-        echo '<script>alert("First name that was put in is invalid")</script>';
+        echo '<script>alert("First name can only contain alphabetic characters")</script>';
         exit;
     }
     if(!(preg_match("/^[A-Za-z]+$/", $lastName)))
     {
-        echo '<script>alert("Last name that was put in is invalid")</script>';
+        echo '<script>alert("Last name can only contain alphabetic characters")</script>';
         exit;
     }
     //calculate the difference in days between current date and put in date
@@ -77,9 +77,9 @@ if (!empty($_POST['firstName']) and !empty($_POST['lastName']) and !empty($_POST
     $day_input = $birthdate[8] . $birthdate[9];
     $month_input = $birthdate[5] . $birthdate[6];
     $year_input = $birthdate[0] . $birthdate[1] . $birthdate[2] . $birthdate[3];
-    $day_dif = date("d") - $day_dif;
-    $month_dif = date("m") - $month_dif;
-    $year_dif = date("Y") - $year_dif;
+    $day_dif = date("d") - $day_input;
+    $month_dif = date("m") - $month_input;
+    $year_dif = date("Y") - $year_input;
     $days_day = $day_dif;
     $days_month = $month_dif * (365.25 / 12);
     $days_year = $year_dif * 365.25;
