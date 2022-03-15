@@ -7,22 +7,25 @@
     <link rel="stylesheet" href="index.css">
     <title>Home</title>
     <?php
+    // Data for logging into the database
     $server = "localhost";
     $username = "root";
     $password = "";
     $database = "b2v2";
 
-
-
+    // Checks if all input fields are filled
     if (!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['birthdate'])) {
+        // Fetches input data from post
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
         $birthdate = $_POST['birthdate'];
 
+        // Checks if any of the names contain chaactes that arent alphabetic
         $numeric = false;
         if (ctype_alpha($firstName) == false || ctype_alpha($lastName) == false) {
             $numeric = true;
 
+            // Sets boolean for error messages later
             if (ctype_alpha($firstName) == false) {
                 $firstNameNumeric = true;
             }
@@ -31,9 +34,11 @@
             }
         }
 
-        if ($numeric ==  !true) {
+        // Sends input data to database if there ae only alphabetic characters
+        if ($numeric ==  false) {
             $conn = new mysqli($server, $username, $password, $database);
 
+            // Prepares SQL statement and executes it
             $sql = "INSERT INTO `userdata` (`ID`, `firstName`, `lastName`, `birthdate`) VALUES (NULL, '$firstName', '$lastName', '$birthdate')";
             if (mysqli_query($conn, $sql)) {
                 echo "Succes";
@@ -50,14 +55,14 @@
 <form method="post">
     <label for="firstName">Voornaam:<br/>
         <?php if (isset($firstNameNumeric)) {echo "<p class='error'><b>Voornaam mag alleen letters bevatten</b><p/>";} ?>
-        <input type="text" name="firstName"><br/>
+        <input type="text" name="firstName" <?php if (isset($firstNameNumeric)) {echo "value='" . $firstName . "'";} ?>><br/>
     </label>
     <label for="lastName">Achternaam:<br/>
         <?php if (isset($lastNameNumeric)) {echo "<p class='error'><b>Achternaam mag alleen letters bevatten</b><p/>";} ?>
-        <input type="text" name="lastName"><br/>
+        <input type="text" name="lastName" <?php if (isset($lastNameNumeric)) {echo "value='" . $lastName . "'";} ?>><br/>
     </label>
     <label for="birthdate">Geboortedatum:<br/>
-        <input type="date" name="birthdate"><br/>
+        <input type="date" name="birthdate" <?php if ($numeric == true) {echo "value='" . $birthdate . "'";} ?>><br/>
     </label>
     <input type="submit" value="🗿">
 </form>
