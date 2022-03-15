@@ -55,11 +55,11 @@
 <form method="post">
     <label for="firstName">Voornaam:<br/>
         <?php if (isset($firstNameNumeric)) {echo "<p class='error'><b>Voornaam mag alleen letters bevatten</b><p/>";} ?>
-        <input type="text" name="firstName" <?php if (isset($firstNameNumeric)) {echo "value='" . $firstName . "'";} ?>><br/>
+        <input type="text" name="firstName" <?php if ($numeric == true) {echo "value='" . $firstName . "'";} ?>><br/>
     </label>
     <label for="lastName">Achternaam:<br/>
         <?php if (isset($lastNameNumeric)) {echo "<p class='error'><b>Achternaam mag alleen letters bevatten</b><p/>";} ?>
-        <input type="text" name="lastName" <?php if (isset($lastNameNumeric)) {echo "value='" . $lastName . "'";} ?>><br/>
+        <input type="text" name="lastName" <?php if ($numeric == true) {echo "value='" . $lastName . "'";} ?>><br/>
     </label>
     <label for="birthdate">Geboortedatum:<br/>
         <input type="date" name="birthdate" <?php if ($numeric == true) {echo "value='" . $birthdate . "'";} ?>><br/>
