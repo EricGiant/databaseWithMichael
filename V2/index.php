@@ -12,20 +12,36 @@
     $password = "";
     $database = "b2v2";
 
+
+
     if (!empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['birthdate'])) {
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
         $birthdate = $_POST['birthdate'];
 
-        $conn = new mysqli($server, $username, $password, $database);
+        $numeric = false;
+        if (ctype_alpha($firstName) == false || ctype_alpha($lastName) == false) {
+            $numeric = true;
 
-        $sql = "INSERT INTO `userdata` (`ID`, `firstName`, `lastName`, `birthdate`) VALUES (NULL, '$firstName', '$lastName', '$birthdate')";
-        if (mysqli_query($conn, $sql)) {
-            echo "Succes";
-        } else {
-            echo "<b>ERROR: </b>" . $sql . "<br/>" . mysqli_error($conn);
+            if (ctype_alpha($firstName) == false) {
+                $firstNameNumeric = true;
+            }
+            if (ctype_alpha($lastName) == false) {
+                $lastNameNumeric = true;
+            }
         }
-        mysqli_close($conn);
+
+        if ($numeric ==  !true) {
+            $conn = new mysqli($server, $username, $password, $database);
+
+            $sql = "INSERT INTO `userdata` (`ID`, `firstName`, `lastName`, `birthdate`) VALUES (NULL, '$firstName', '$lastName', '$birthdate')";
+            if (mysqli_query($conn, $sql)) {
+                echo "Succes";
+            } else {
+                echo "<b>ERROR: </b>" . $sql . "<br/>" . mysqli_error($conn);
+            }
+            mysqli_close($conn);
+        }
     }
     ?>
 </head>
@@ -33,9 +49,11 @@
 <a href="selectInfo.php">shidfard</a>
 <form method="post">
     <label for="firstName">Voornaam:<br/>
+        <?php if (isset($firstNameNumeric)) {echo "<p class='error'><b>Voornaam mag alleen letters bevatten</b><p/>";} ?>
         <input type="text" name="firstName"><br/>
     </label>
     <label for="lastName">Achternaam:<br/>
+        <?php if (isset($lastNameNumeric)) {echo "<p class='error'><b>Achternaam mag alleen letters bevatten</b><p/>";} ?>
         <input type="text" name="lastName"><br/>
     </label>
     <label for="birthdate">Geboortedatum:<br/>
