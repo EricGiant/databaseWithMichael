@@ -15,8 +15,8 @@
     <label for="lastName">Achternaam:<br/>
         <input type="text" name="lastName">
     </label>
-    <label for="birthDate">Geboortedatum:<br/>
-        <input type="date" name="lastName">
+    <label for="birthdate">Geboortedatum:<br/>
+        <input type="date" name="birthdate">
     </label>
 </form>
 </body>
