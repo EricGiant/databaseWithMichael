@@ -51,20 +51,34 @@
     ?>
 </head>
 <body>
-<a href="selectInfo.php">shidfard</a>
-<form method="post">
-    <label for="firstName">Voornaam:<br/>
-        <?php if (isset($firstNameNumeric)) {echo "<p class='error'><b>Voornaam mag alleen letters bevatten</b><p/>";} ?>
-        <input type="text" name="firstName" <?php if ($numeric == true) {echo "value='" . $firstName . "'";} ?>><br/>
-    </label>
-    <label for="lastName">Achternaam:<br/>
-        <?php if (isset($lastNameNumeric)) {echo "<p class='error'><b>Achternaam mag alleen letters bevatten</b><p/>";} ?>
-        <input type="text" name="lastName" <?php if ($numeric == true) {echo "value='" . $lastName . "'";} ?>><br/>
-    </label>
-    <label for="birthdate">Geboortedatum:<br/>
-        <input type="date" name="birthdate" <?php if ($numeric == true) {echo "value='" . $birthdate . "'";} ?>><br/>
-    </label>
-    <input type="submit" value="🗿">
-</form>
+<a href="selectInfo.php" style="display: block;">shidfard</a>
+<div style = "display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 30px">
+    <div>
+        <form method="post">
+            <div class = "label">Voornaam<br/></div>
+                <!-- Gives error message and remembers input -->
+                <?php if (isset($firstNameNumeric)) {echo "<p class='error'><b>Voornaam mag alleen letters bevatten</b><p/>";} ?>
+                <div style="text-align: center;">
+                    <input type="text" name="firstName" class = "input" <?php if (isset($numeric)) {echo "value='" . $firstName . "'";} ?>><br/>
+                </div>
+                <div class = "label">Achternaam<br/></div>
+                <!-- Gives error message and remembers input -->
+                <?php if (isset($lastNameNumeric)) {echo "<p class='error'><b>Achternaam mag alleen letters bevatten</b><p/>";} ?>
+                <div style="text-align: center;">
+                    <input type="text" name="lastName" class = "input" <?php if (isset($numeric)) {echo "value='" . $lastName . "'";} ?>><br/>
+                </div>
+                <div class = "label">Geboortedatum<br/></div>
+                <div style="text-align: center;">
+                    <input type="date" name="birthdate" class = "input" style = "width: 35%; text-align: center" <?php if (isset($numeric)) {echo "value='" . $birthdate . "'";} ?>><br/>
+                </div>
+                <div style="text-align: center;">
+                    <input type="submit" value="Submit" class = "label" style = "margin-top: 20px">
+                </div>
+        </form>
+    </div>
+    <div>
+        <?php include("selectInfo.php");?>
+    </div>
+</div>
 </body>
 </html>

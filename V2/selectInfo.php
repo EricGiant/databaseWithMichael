@@ -6,13 +6,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div style = "width:40%; height:500px; border:3px solid black">
+    <div style = "width: 80%; height:400px; border:3px solid black; margin: auto">
     <?php
     //connect to DB
     
     //return array of entries
 
-    $dbEntries = [];
+    $dbEntries = ["test", "test"];
 
     //loops for the amount of entries in the database
     $testFirstname = "Eric";
