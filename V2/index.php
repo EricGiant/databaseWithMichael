@@ -7,6 +7,17 @@
     <title>Home</title>
 </head>
 <body>
-    
+<a href="selectInfo.php">shidfard</a>
+<form method="post">
+    <label for="firstName">Voornaam:<br/>
+        <input type="text" name="firstName">
+    </label>
+    <label for="lastName">Achternaam:<br/>
+        <input type="text" name="lastName">
+    </label>
+    <label for="birthDate">Geboortedatum:<br/>
+        <input type="date" name="lastName">
+    </label>
+</form>
 </body>
 </html>
