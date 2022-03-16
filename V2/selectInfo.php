@@ -15,26 +15,33 @@
     border-radius: 30px;
     ">
     <?php
-    //connect to DB
-    
-    //return array of entries
+    // Login info for database
+    $server = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "b2v2";
 
-    $dbEntries = ["test","test2","test3","test4", "test5", "test6", "test7", "test8"];
+    // Makes connection to database
+    $conn = new mysqli($server, $username, $password, $database);
 
-    //loops for the amount of entries in the database
-    $testFirstname = "Eric";
-    $testLastname = "Spier";
-    $testBirthdate = "2005-07-11";
-    $testID = "1";
-    //make entry using the returned database info (as array)
-    //then use the first letter of the last name + first name + birthdate to show what entry is what
-    for($i = 0; $i < count($dbEntries); $i++)
+    // Creates array with all database entries
+    $sql = "SELECT * FROM userdata";
+    $result = mysqli_query($conn, $sql);
+    $entries = array();
+    if (mysqli_num_rows($result)>0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $entries[] = $row;
+        }
+    }
+
+    // Echoes all database entries
+    for($i = 0; $i < count($entries); $i++)
     {
-        $fName = $testFirstname;
-        $lName = $testLastname[0];
-        $bDate = $testBirthdate;
-        echo("<div class = 'entry' id = " . $testID . ">");
-        echo($lName . "   " . $fName . "<br>" . $bDate);
+        $fName = $entries[$i]["firstName"];
+        $lName = $entries[$i]["lastName"];
+        $bDate = $entries[$i]["birthdate"];
+        echo("<div class = 'entry' id = " . $entries[$i]["ID"] . ">");
+        echo substr($fName, 0, 1) . ". " . $lName . "<br/>" . $bDate;
         echo("</div>");
     }
     ?>
