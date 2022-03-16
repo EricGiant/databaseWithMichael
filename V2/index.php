@@ -46,6 +46,7 @@
                 echo "<b>ERROR: </b>" . $sql . "<br/>" . mysqli_error($conn);
             }
             mysqli_close($conn);
+            //reload webpage to clear $_POST
             header("Location: index.php");
         }
     }
