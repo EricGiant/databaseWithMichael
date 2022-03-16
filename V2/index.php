@@ -71,7 +71,7 @@
                 </div>
                 <div class = "label">Geboortedatum<br/></div>
                 <div style="text-align: center;">
-                    <input type="date" name="birthdate" class = "input" style = "width: 35%; text-align: center" <?php if (isset($numeric)) {echo "value='" . $birthdate . "'";} ?>><br/>
+                    <input type="date" name="birthdate" class = "input" style = "width: fit-content; text-align: center" <?php if (isset($numeric)) {echo "value='" . $birthdate . "'";} ?>><br/>
                 </div>
                 <div style="text-align: center;">
                     <input type="submit" value="Submit" class = "label" style = "margin-top: 20px">

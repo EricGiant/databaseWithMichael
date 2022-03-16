@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
     <link rel = "stylesheet" href = "selectInfo.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-    <div style = "width: 80%; height:400px; border:3px solid black; margin: auto">
+    <div style ="
+    background-color: white;
+    width: 80%;
+    height: 400px;
+    margin: auto;
+    overflow: auto;
+    border:10px solid white;
+    border-radius: 30px;
+    ">
     <?php
     //connect to DB
     
     //return array of entries
 
-    $dbEntries = ["test"];
+    $dbEntries = ["test","test2","test3","test4", "test5", "test6", "test7", "test8"];
 
     //loops for the amount of entries in the database
     $testFirstname = "Eric";
@@ -42,7 +49,7 @@
                 $(this).click(function()
                 {
                     var id = this.id;
-                    location.href = "selectInfo.php?id=" + id;
+                    location.href = "index.php?id=" + id;
                 });
             });
         });
