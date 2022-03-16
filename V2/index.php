@@ -53,7 +53,7 @@
     ?>
 </head>
 <body>
-<a href="selectInfo.php" style="display: block;">shidfard</a>
+<a href="php/userInfo.php" style="display: block;">shidfard</a>
 <div style = "display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 30px">
     <div>
         <form method="post">
