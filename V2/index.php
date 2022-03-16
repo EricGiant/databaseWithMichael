@@ -20,7 +20,7 @@
         $lastName = $_POST['lastName'];
         $birthdate = $_POST['birthdate'];
 
-        // Checks if any of the names contain chaactes that arent alphabetic
+        // Checks if any of the names contain characters that aren't alphabetic
         $numeric = false;
         if (ctype_alpha($firstName) == false || ctype_alpha($lastName) == false) {
             $numeric = true;
