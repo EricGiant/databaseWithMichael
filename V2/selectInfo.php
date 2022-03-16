@@ -12,13 +12,13 @@
     
     //return array of entries
 
-    $dbEntries = ["test", "test"];
+    $dbEntries = ["test"];
 
     //loops for the amount of entries in the database
     $testFirstname = "Eric";
     $testLastname = "Spier";
     $testBirthdate = "2005-07-11";
-    $testID = "3";
+    $testID = "1";
     //make entry using the returned database info (as array)
     //then use the first letter of the last name + first name + birthdate to show what entry is what
     for($i = 0; $i < count($dbEntries); $i++)

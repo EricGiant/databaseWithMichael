@@ -46,6 +46,7 @@
                 echo "<b>ERROR: </b>" . $sql . "<br/>" . mysqli_error($conn);
             }
             mysqli_close($conn);
+            header("Location: index.php");
         }
     }
     ?>
