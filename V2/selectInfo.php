@@ -6,12 +6,12 @@
 </head>
 <body>
     <div style ="
-    background-color: white;
+    background-color: rgb(228, 224, 235);
     width: 80%;
     height: 400px;
     margin: auto;
     overflow: auto;
-    border:10px solid white;
+    border:10px solid rgb(228, 224, 235);
     border-radius: 30px;
     ">
     <?php

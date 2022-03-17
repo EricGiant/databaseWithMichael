@@ -1,7 +1,7 @@
 .entry
 {
     border-radius: 20px;
-    background: #67c8fb;
+    background: rgb(150, 155, 210);
     text-align: center;
     font-size: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -9,7 +9,7 @@
 }
 ::-webkit-scrollbar
 {
-    background-color: white;
+    background-color: rgb(228, 224, 235);
 }
 ::-webkit-scrollbar-thumb
 {
