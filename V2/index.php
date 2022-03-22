@@ -45,9 +45,10 @@
             } else {
                 echo "<b>ERROR: </b>" . $sql . "<br/>" . mysqli_error($conn);
             }
+            $submitedID = $conn->insert_id;
             mysqli_close($conn);
-            //reload webpage to clear $_POST
-            header("Location: index.php");
+            //reload webpage to clear $_POST and set userInfo to new submit
+            header("Location: index.php?id=$submitedID");
         }
     }
     ?>
