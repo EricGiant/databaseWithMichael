@@ -5,8 +5,34 @@
 </head>
 <body>
     <?php
-    $name = "test test";
-    $birthDate = "2000-07-20";
+    $id;
+    //collect ID send through get
+    if($_GET == null)
+    {
+        return;
+    }
+    else
+    {
+        $id = $_GET["id"];
+    }
+    // server info
+    $server = "localhost";
+    $database = "b2v2";
+    $username = "root";
+    $password = "";
+    $connection = new mysqli($server, $username, $password, $database);
+    //collect info from server
+    $sql = "SELECT firstName, lastName, birthdate FROM userdata WHERE id = $id";
+    $result = $connection -> query($sql);
+    $result = $result -> fetch_assoc();
+    //close connection to DB
+    $connection -> close();
+
+
+
+
+    $name = $result["firstName"] . " " . $result["lastName"];
+    $birthDate = $result["birthdate"];
     $days = 10;
     $months = 10;
     $years = 10;
