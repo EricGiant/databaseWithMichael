@@ -53,7 +53,6 @@
     ?>
 </head>
 <body>
-<a href="php/userInfo.php" style="display: block;">shidfard</a>
 <div style = "display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 30px">
     <div>
         <form method="post">
@@ -82,5 +81,9 @@
         <?php include("selectInfo.php");?>
     </div>
 </div>
+<div style="padding: 80px">
+    <?php include "userInfo.php"?>
+</div>
+
 </body>
 </html>
