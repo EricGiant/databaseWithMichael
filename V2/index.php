@@ -56,7 +56,7 @@
     <div class = "divGrid">
         <form method="post" id = "form">
             <div class = "inputFieldGrid">
-                <div style = "margin-top: 10%;">
+                <div>
                     First name <br>
                     <!-- Gives error message and remembers input -->
                     <?php if (isset($firstNameNumeric))
@@ -69,7 +69,7 @@
                         echo "value='" . $firstName . "'";
                     }?>><br>
                 </div>
-                <div style = "margin-top: 10%;">
+                <div>
                     Birthdate <br>
                     <input type="date" name="birthdate" class = "formEntry" style = "text-align: center"
                     <?php if (isset($numeric))
@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div class = "inputFieldGrid">
-                <div style = "margin-top: 10%;">
+                <div>
                     Last name <br>
                     <!-- Gives error message and remembers input -->
                     <?php if (isset($lastNameNumeric))
