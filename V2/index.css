@@ -9,14 +9,14 @@ body {
 
 .label
 {
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
     margin: 10px;
 }
 
 .input
 {
-    font-size: 25px;
+    font-size: 10px;
     width: 50%;
     padding: 5px;
 }

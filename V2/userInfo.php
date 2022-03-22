@@ -23,7 +23,7 @@
             echo("<div class = 'infoText'>" . "Has been alive for" . "</div>" . "<br>");
             echo("<div class = 'infoText' style = 'font-size: 25px'>" . "Days" . "</div>" . "<div class = 'awnserText'>" . $days . "</div>" . "<br>");
             echo("<div class = 'infoText' style = 'font-size: 25px'>" . "Months" . "</div>" . "<div class = 'awnserText'>" . $months . "</div>" . "<br>");
-            echo("<div class = 'infoText' style = 'font-size: 25px'>" . "Years" . "</div>" . "<div class = 'awnserText' style = 'font-size : 20px'>" . $years . "</div>" . "<br>");
+            echo("<div class = 'infoText' style = 'font-size: 25px'>" . "Years" . "</div>" . "<div class = 'awnserText'>" . $years . "</div>" . "<br>");
         echo("</div>");
     echo("</div>");
     ?>

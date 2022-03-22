@@ -53,7 +53,7 @@
     ?>
 </head>
 <body>
-<div style = "display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 30px">
+<div style = "display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 10px">
     <div>
         <form method="post">
             <div class = "label">Voornaam<br/></div>
@@ -81,7 +81,7 @@
         <?php include("selectInfo.php");?>
     </div>
 </div>
-<div style="padding: 80px">
+<div style="padding: 10px">
     <?php include "userInfo.php"?>
 </div>
 

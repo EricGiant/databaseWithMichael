@@ -8,7 +8,7 @@
     <div style ="
     background-color: rgb(228, 224, 235);
     width: 80%;
-    height: 400px;
+    height: 300px;
     margin: auto;
     overflow: auto;
     border:10px solid rgb(228, 224, 235);
