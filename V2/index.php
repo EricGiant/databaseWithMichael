@@ -53,34 +53,54 @@
     ?>
 </head>
 <body>
-<div style = "display: grid; grid-template-columns: repeat(2, 1fr); margin-top: 10px">
-    <div>
-        <form method="post">
-            <div class = "label">Voornaam<br/></div>
-                <!-- Gives error message and remembers input -->
-                <?php if (isset($firstNameNumeric)) {echo "<p class='error'><b>Voornaam mag alleen letters bevatten</b><p/>";} ?>
-                <div style="text-align: center;">
-                    <input type="text" name="firstName" class = "input" <?php if (isset($numeric)) {echo "value='" . $firstName . "'";} ?>><br/>
+    <div class = "divGrid">
+        <form method="post" id = "form">
+            <div class = "inputFieldGrid">
+                <div style = "margin-top: 10%;">
+                    First name <br>
+                    <!-- Gives error message and remembers input -->
+                    <?php if (isset($firstNameNumeric))
+                    {
+                        echo "<p class='error'><b>Voornaam mag alleen letters bevatten</b><p/>";
+                    }?>
+                    <input type="text" name="firstName" class = "formEntry" autocomplete = "off"
+                    <?php if (isset($numeric))
+                    {
+                        echo "value='" . $firstName . "'";
+                    }?>><br>
                 </div>
-                <div class = "label">Achternaam<br/></div>
-                <!-- Gives error message and remembers input -->
-                <?php if (isset($lastNameNumeric)) {echo "<p class='error'><b>Achternaam mag alleen letters bevatten</b><p/>";} ?>
-                <div style="text-align: center;">
-                    <input type="text" name="lastName" class = "input" <?php if (isset($numeric)) {echo "value='" . $lastName . "'";} ?>><br/>
+                <div style = "margin-top: 10%;">
+                    Birthdate <br>
+                    <input type="date" name="birthdate" class = "formEntry" style = "text-align: center"
+                    <?php if (isset($numeric))
+                    {
+                        echo "value='" . $birthdate . "'";
+                    }?>> <br>
                 </div>
-                <div class = "label">Geboortedatum<br/></div>
-                <div style="text-align: center;">
-                    <input type="date" name="birthdate" class = "input" style = "width: fit-content; text-align: center" <?php if (isset($numeric)) {echo "value='" . $birthdate . "'";} ?>><br/>
+            </div>
+            <div class = "inputFieldGrid">
+                <div style = "margin-top: 10%;">
+                    Last name <br>
+                    <!-- Gives error message and remembers input -->
+                    <?php if (isset($lastNameNumeric))
+                    {
+                        echo "<p class='error'><b>Achternaam mag alleen letters bevatten</b><p/>";
+                    }?>
+                    <input type="text" name="lastName" class = "formEntry" autocomplete = "off"
+                    <?php if (isset($numeric)) 
+                    {
+                        echo "value='" . $lastName . "'";
+                    }?>> <br/>
                 </div>
-                <div style="text-align: center;">
-                    <input type="submit" value="Submit" class = "label" style = "margin-top: 20px">
+                <div style = "position:relative">
+                    <input type="submit" value="Submit" id = "formSubmit">
                 </div>
+            </div>
         </form>
-    </div>
-    <div>
         <?php include("selectInfo.php");?>
     </div>
-</div>
+        
+        
 <div style="padding: 10px">
     <?php include "userInfo.php"?>
 </div>

@@ -6,6 +6,7 @@
     font-size: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin:5px 5px 5px 5px;
+    color: rgb(228, 224, 235);
 }
 ::-webkit-scrollbar
 {
