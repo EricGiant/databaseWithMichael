@@ -28,7 +28,16 @@
     //close connection to DB
     $connection -> close();
 
-
+    // calculate days, months, years from birthdate
+    $birthdate = $result["birthdate"];
+    $birthdate = strtotime($birthdate);
+    $today = time();
+    $difference = $today - $birthdate;
+    $days = floor($difference / (60 * 60 * 24));
+    $months = floor($days / 30);
+    $years = floor($months / 12);
+    $months = $months % 12;
+    $days = $days % 30;
 
 
     $name = $result["firstName"] . " " . $result["lastName"];
