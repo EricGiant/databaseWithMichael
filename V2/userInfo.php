@@ -28,23 +28,19 @@
     //close connection to DB
     $connection -> close();
 
-    // calculate days, months, years from birthdate
-    $birthdate = $result["birthdate"];
-    $birthdate = strtotime($birthdate);
-    $today = time();
-    $difference = $today - $birthdate;
-    $days = floor($difference / (60 * 60 * 24));
-    $months = floor($days / 30);
-    $years = floor($months / 12);
-    $months = $months % 12;
-    $days = $days % 30;
+    //calculate total days alive
+    $birthDate = $result["birthdate"];
+    $dayDif = date("d") - ($birthDate[8] . $birthDate[9]);
+    $monthDif = date("m") - ($birthDate[5] . $birthDate[6]);
+    $yearDif = date("Y") - ($birthDate[0] . $birthDate[1] . $birthDate[2] . $birthDate[3]);
+    $totalDays = $dayDif + ($monthDif * (365.25 / 12)) + ($yearDif * 365.25);
 
-
+    //print page
     $name = $result["firstName"] . " " . $result["lastName"];
     $birthDate = $result["birthdate"];
-    $days = 10;
-    $months = 10;
-    $years = 10;
+    $days = floor($totalDays);
+    $months = floor($totalDays / (365.25 / 12));
+    $years = round($totalDays / 365.25, 1);
     echo("<div id = 'grid'>");
         echo("<div style = 'padding: 10px; display: grid; grid-template-columns: repeat(1, 1fr)'>");
             echo("<div>");
